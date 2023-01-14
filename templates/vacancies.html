@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/vacancies.css' %}">
+{% endblock %}
+{% block main %}
+    {% for item in items %}
+        <div class="item">
+            <h1>{{ item.name }}</h1>
+            <ul>
+                <li>{{ item.description | safe }}</li>
+                <li>{{ item.salary }}</li>
+                <li>{{ item.key_skills }}</li>
+                <li>{{ item.area }}</li>
+                <li>{{ item.published_at }}</li>
+            </ul>
+        </div>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static  'css/profession.css' %}">
+{% endblock %}
+{% block title %}{{ profession.title }}{% endblock %}
+
+
+
+{% block main %}
+    <h1>{{ profession.title }}</h1>
+    {{ profession.desc | safe }}
+    {% if profession.img %}
+        <img src="{{ profession.img.url }}" alt="">
+    {% endif %}
+{% endblock %}
